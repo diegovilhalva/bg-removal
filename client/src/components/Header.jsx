@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { assets } from '../assets/assets'
+import { AppContext } from '../context/AppContext'
 
 const Header = () => {
+
+    const {removeBg} = useContext(AppContext)
     return (
         <div className='flex items-center justify-between max-sm:flex-col-reverse gap-y-10 px-4 mt-10 lg:px-44 sm:mt-15'>
             <div className="">
@@ -9,7 +12,7 @@ const Header = () => {
                 <p className='my-6 text-[15px] text-gray-500'>Easily remove backgrounds from your images with just a few clicks.
                     <br className="max-sm:hidden" />Fast, intuitive, and accurate—your go-to tool for flawless results every time.</p>
                 <div className="">
-                    <input type="file" name="" id="upload" hidden />
+                    <input type="file" accept='image/*' id="upload" onChange={(e) => removeBg(e.target.files[0])} hidden />
                     <label htmlFor="upload" className='inline-flex gap-3 px-8 py-3.5 rounded-full cursor-pointer bg-gradient-to-r from-violet-600 to-fuchsia-500 m-auto hover:scale-105 transition-all duration-700'>
                         <img width={20} src={assets.upload_btn_icon} alt="" />
                         <p className='text-white text-sm'>Upload your image</p>

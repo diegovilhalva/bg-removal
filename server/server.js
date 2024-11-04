@@ -3,7 +3,7 @@ import express from "express"
 import cors from "cors"
 import connectDB from './configs/mongodb.js'
 import userRoutes from "./routes/user.routes.js"
-
+import imageRoutes from "./routes/image.routes.js"
 const PORT = process.env.PORT || 4000
 
 
@@ -19,7 +19,7 @@ app.get("/",(req,res) => {
 })
 
 app.use("/api/user",userRoutes)
-
+app.use("/api/image",imageRoutes)
 
 app.listen(PORT,() => {
     console.log(`Server running on port ${PORT}`)
