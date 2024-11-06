@@ -66,11 +66,10 @@ The **Server** is responsible for:
 
 ## Deployment
 
-The **Client** is deployed on [Vercel](https://vercel.com/), and the **Server** is deployed on your chosen backend platform.
-
+The **Client** and **Server** is deployed on [Vercel](https://vercel.com/)
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-```
+
 
